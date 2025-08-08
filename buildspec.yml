@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - echo "Nothing to do in the pre-build phase."
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Zipping the website files..."
+      - zip -r website.zip .
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+artifacts:
+  files:
+    - website.zip
