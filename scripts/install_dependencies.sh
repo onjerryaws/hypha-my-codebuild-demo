@@ -1,2 +1,4 @@
 #!/bin/bash
-yum install -y nginx
+set -e
+dnf -y install nginx
+systemctl enable nginx
